@@ -1,0 +1,89 @@
+﻿@using X.PagedList;
+@using X.PagedList.Mvc.Core
+
+@model IPagedList<Customer>
+  <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+  <p class="mb-4">
+    DataTables is a third party plugin that is used to generate the demo table
+    below. For more information about DataTables, please visit the
+    <a target="_blank" href="https://datatables.net"
+      >official DataTables documentation</a
+    >.
+  </p>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <a
+        asp-controller="Customer"
+        asp-action="Create"
+        class="btn btn-success btn-circle btn-lg"
+      >
+        <i class="fas fa-check"></i>
+      </a>
+      <h6 class="m-0 font-weight-bold text-primary">Customer Admin</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table
+          class="table table-bordered"
+          id="dataTable"
+          width="100%"
+          cellspacing="0"
+        >
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>FullName</th>
+              <th>Desc</th>
+              <th>Position</th>
+              <th>Delete Action</th>
+              <th>Edit Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach (Customer item in Model) {
+            <tr>
+              <td>
+                <img
+                  width="100px"
+                  height="100px"
+                  src="~/assets/images/@item.Image"
+                />
+              </td>
+              <td>@item.FullName</td>
+              <td>@item.Desc</td>
+
+              <td>@item.Position</td>
+              <td>
+                <form
+                  method="post"
+                  asp-controller="Customer"
+                  asp-action="Delete"
+                  asp-route-id="@item.Id"
+                >
+                  <button type="submit" class="btn btn-danger btn-circle">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </form>
+              </td>
+              <td>
+                <a
+                  asp-controller="Customer"
+                  asp-action="Edit"
+                  asp-route-id="@item.Id"
+                  class="btn btn-info btn-circle"
+                >
+                  <i class="fas fa-info-circle"></i>
+                </a>
+              </td>
+            </tr>
+            }
+          </tbody>
+        </table>
+        @Html.PagedListPager((IPagedList)Model,page=>Url.Action("Index",new{ page}))
+
+      </div>
+    </div>
+  </div></Customer
+>

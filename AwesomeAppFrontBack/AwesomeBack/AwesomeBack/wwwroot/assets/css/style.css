@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.imgofhero{
+    width: 80%;
+    height: 80%;
+}
+.text-bg-dark-cus{
+    color: white !important;
+}
+.featuer-icon{
+    color: #f5593d;
+    font-size: 70px;
+}
+.text-cus-color-p{
+    color: #7b7e83;
+}
+.hrall{
+    width: 100%;
+}
+.imgtestemoniol{
+    width: 30%;
+    height: 80%;
+}
+.screenshots{
+    background-color: #f5fafd;
+}
+.imgofowlb{
+    width: 100%;
+    height: 100%;
+}
+.card-bg-cus{
+    background-color: #f5fafd !important;
+}
+.testimonialsdiv{
+    border: 0px solid white ;
+    border-radius:50px;
+    background-color: #f5fafd !important;
+
+}
+.platformdiv{
+    background-color: white !important;
+    border: 0px solid white;
+    border-radius:50px;    
+}
+.logoplatform{
+    font-size: 70px;
+}
+@media(max-width:1400px){
+    .cardall{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .cardcolforpric{
+        margin-bottom:30px;
+    }
+    
+}

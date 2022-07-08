@@ -1,0 +1,59 @@
+﻿@model RegisterVM
+
+<div class="page-header breadcrumb-wrap">
+
+</div>
+<div class="page-content pt-150 pb-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-8 col-lg-10 col-md-12 m-auto">
+                <div class="row">
+                    <div class="col-lg-6 col-md-8">
+                        <div class="login_wrap widget-taber-content background-white">
+                            <div class="padding_eight_all bg-white">
+                                <div class="heading_s1">
+                                    <h1 class="mb-5">Create an Account</h1>
+                                    <p class="mb-30">Already have an account? <a asp-action="SignIn">Login</a></p>
+                                </div>
+                                <form method="post">
+                                    <div class="form-group">
+                                        <input asp-for="Name" class="form-control pt-2" placeholder="Name" />
+                                        <span class="text-danger" asp-validation-for="Name"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input asp-for="Surname" class="form-control pt-2" placeholder="Surname" />
+                                        <span class="text-danger" asp-validation-for="Surname"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input asp-for="Username" class="form-control pt-2" placeholder="Username" />
+                                        <span class="text-danger" asp-validation-for="Username"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input asp-for="Email" class="form-control pt-2" placeholder="Email" />
+                                        <span class="text-danger" asp-validation-for="Email"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input asp-for="Password" class="form-control pt-2" placeholder="Password" />
+                                        <span class="text-danger" asp-validation-for="Password"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input asp-for="ConfirmPassword" class="form-control pt-2" placeholder="ConfirmPassword" />
+                                        <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                                    </div>
+
+
+                                    <div asp-validation-summary="ModelOnly"></div>
+                                    <div class="form-group mb-30">
+                                        <button type="submit" class="btn btn-primary">Register Now!</button>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
